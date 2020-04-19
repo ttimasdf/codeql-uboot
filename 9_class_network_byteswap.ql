@@ -8,7 +8,7 @@ class NetworkByteSwap extends Expr {
     // 表示输出的Expr要与这个m有特定关联
     exists(MacroInvocation m |
       // m符合的条件是：名字是ntohs等等
-      m.getMacroName().regexpMatch("ntoh(s|l|ll)") |
+      m.getMacroName().regexpMatch("ntoh(s|l|ll)") and
       // 输出的Expr是m的展开结果
       m.getExpr() = this
     )
